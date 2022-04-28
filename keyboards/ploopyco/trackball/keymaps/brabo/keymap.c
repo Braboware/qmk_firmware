@@ -24,7 +24,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT( KC_BTN1, KC_BTN3, LT(0,KC_NO), KC_BTN2, KC_F13 ),
-    [1] = LAYOUT( _______, _______, _______, _______, _______ ),
+    [1] = LAYOUT( _______, _______, _______, KC_BTN4, KC_BTN5 ),
     [2] = LAYOUT( _______, _______, _______, _______, _______ ),
     [3] = LAYOUT( _______, _______, _______, _______, _______ ),
     [4] = LAYOUT( _______, _______, _______, _______, _______ ),
@@ -93,8 +93,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_custom_keycode(DRAG_SCROLL, 3, 0); // If this isn't here drag scroll toggles on tap and the 'else unregister' doesn't catch it for some reason
             } else if (!record->tap.count && record->event.pressed) {
                 register_custom_keycode(DRAG_SCROLL, 3, 0);
+                layer_on(1); // layer 1 on for forward and backward buttons while holding drag scroll
             } else {
-                unregister_custom_keycode(DRAG_SCROLL, 3, 0); // Release drag scroll 
+                unregister_custom_keycode(DRAG_SCROLL, 3, 0); // Release drag scroll
+                layer_off(1);
             }
             return false;
     }

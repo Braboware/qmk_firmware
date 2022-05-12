@@ -47,7 +47,9 @@
 #    define PLOOPY_DRAGSCROLL_MULTIPLIER 0.75  // Variable-DPI Drag Scroll
 #endif
 
-#define PLOOPY_DRAGSCROLL_DENOMINATOR 5
+#ifndef PLOOPY_DRAGSCROLL_DENOMINATOR
+#    define PLOOPY_DRAGSCROLL_DENOMINATOR 10
+#endif
 
 static int _dragscroll_accumulator_x = 0;
 static int _dragscroll_accumulator_y = 0;

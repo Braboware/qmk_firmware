@@ -24,7 +24,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT( KC_BTN1, KC_BTN3, LT(0,KC_NO), KC_BTN2, KC_F13 ),
-    [1] = LAYOUT( _______, _______, _______, KC_BTN4, KC_BTN5 ),
+    [1] = LAYOUT( DPI_CONFIG, _______, _______, KC_BTN4, KC_BTN5 ),
     [2] = LAYOUT( _______, _______, _______, _______, _______ ),
     [3] = LAYOUT( _______, _______, _______, _______, _______ ),
     [4] = LAYOUT( _______, _______, _______, _______, _______ ),
